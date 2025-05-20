@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <title>Nivelul 1 | Aventura Piticilor Medievali</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="images/logo.svg">
+  <style>
+    @font-face {
+      font-family: 'MedievalSharp';
+      src: url('fonts/MedievalSharp-Book.ttf') format('truetype');
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'MedievalSharp', cursive;
+      background-color: #fffbea;
+      color: #3b2f2f;
+    }
+
+    header {
+      background-color: #3b2f2f;
+      color: white;
+      padding: 20px 10px;
+      text-align: center;
+    }
+
+    header img {
+      max-width: 160px;
+      margin-bottom: 10px;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0 0 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    nav a {
+      color: #ffe600;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      padding: 40px 20px;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h1 {
+      text-align: left;
+      font-size: 2.5rem;
+    }
+
+    .columns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-top: 50px;
+      justify-content: space-between;
+    }
+
+    .column {
+      min-width: 280px;
+    }
+
+    .left-column {
+      flex: 3;
+    }
+
+    .right-column {
+      flex: 2;
+    }
+
+    .column img {
+      width: 100%;
+      height: auto;
+      display: block;
+      margin: 20px 0;
+      border: none;
+    }
+
+    .img-gap {
+      margin-top: 90px !important;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 10px;
+      background: #3b2f2f;
+      color: #ffe600;
+      font-size: 1.1rem;
+      letter-spacing: 0.5px;
+      border-top: 2px solid #ffe600;
+      margin-top: 40px;
+      border-radius: 18px 18px 0 0;
+      box-shadow: 0 -2px 12px 0 rgba(200,180,100,0.07);
+    }
+
+    /* Mărește textele mici din secțiuni, explicații, recenzii */
+    .faq-item p,
+    .highlight p,
+    .why-section p,
+    .column p,
+    .intro p,
+    main p,
+    main ul,
+    main li {
+      font-size: 1.15rem;
+      line-height: 1.7;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="images/book.png" alt="Logo joc" />
+    <nav>
+      <ul>
+        <li><a href="index.html">Acasă</a></li>
+        <li><a href="despre.html">Despre joc</a></li>
+        <li><a href="povestea.html">Povestea</a></li>
+        <li><a href="nivele.html" class="active">Nivele</a></li>
+        <li><a href="descarca.html">Descarcă</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1><strong>Nivelul 1</strong></h1>
+    <div class="columns">
+      <div class="column left-column">
+        <p>Ai pășit în primul tărâm. Aici încep testele tale.<br>
+        <strong>Goblinii</strong> fură cărți și le ascund în adâncurile întunecate ale pădurii.<br>
+        <strong>Tu</strong>, ca pitic curajos, trebuie să răspunzi corect la întrebări despre literatura medievală ca să le recuperezi.</p>
+        <img src="images/lvl1_background.png" alt="Pădure întunecată">
+        <img src="images/goblin_grab_background.png" alt="Goblin fură o carte" class="img-gap">
+        <p>Jocul Aventura Piticilor Medievali este perfect pentru pasionații de jocuri video, indiferent de vârstă. Personajele amuzante și provocările constante vă vor ține cu sufletul la gură și veți dori să explorați fiecare colțișor al lumii virtuale.</p>
+      </div>
+      <div class="column right-column">
+        <img src="images/1_circle_icon.png" alt="Icon nivel 1">
+        <p><strong>Dar ai grijă:</strong></p>
+        <ul>
+          <li>Goblinii sunt rapizi și vicleni. Dacă nu ești atent, te lasă fără nimic.</li>
+          <li>Vei fi nevoit să înveți repede, să faci alegeri logice, să îți asumi riscuri.</li>
+          <li><strong style="font-size: 1.125rem;">Sandogand</strong></li>
+          <li>Protectorul cunoașterii, te va testa. Doar dacă treci toate încercările îți va înmâna una dintre cărțile pierdute.</li>
+        </ul>
+        <img src="images/dwarf_walk_front2.png" alt="Piticul merge">
+      </div>
+    </div>
+    <h2 style="text-align: center; margin-top: 40px;">Acest nivel nu e doar un test.<br>Este începutul unei lupte pentru adevăr.<br></h2>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Aventura Piticilor Medievali. Toate drepturile rezervate.</p>
+  </footer>
+</body>
+</html>

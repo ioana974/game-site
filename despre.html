@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <title>Despre Joc - Aventura Piticilor Medievali</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    @font-face {
+      font-family: 'MedievalSharp';
+      src: url('fonts/MedievalSharp-Book.ttf') format('truetype');
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'MedievalSharp', cursive;
+      background-color: #fffbea;
+      color: #3b2f2f;
+    }
+
+    header {
+      background-color: #3b2f2f;
+      color: white;
+      padding: 20px 10px;
+      text-align: center;
+    }
+
+    header img {
+      max-width: 160px;
+      margin-bottom: 10px;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0 0 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    nav a {
+      color: #ffe600;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    .two-column {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 40px;
+      justify-content: space-between;
+    }
+
+    .column {
+      flex: 1 1 45%;
+    }
+
+    .column img {
+      width: 100%;
+      border: 4px solid #3b2f2f;
+      border-radius: 10px;
+    }
+
+    h1, h2 {
+      text-align: center;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 10px;
+      background: #3b2f2f;
+      color: #ffe600;
+      font-size: 1.1rem;
+      letter-spacing: 0.5px;
+      border-top: 2px solid #ffe600;
+      margin-top: 40px;
+      border-radius: 18px 18px 0 0;
+      box-shadow: 0 -2px 12px 0 rgba(200,180,100,0.07);
+    }
+
+    /* Mărește textele mici din secțiuni, explicații, recenzii */
+    .faq-item p,
+    .highlight p,
+    .why-section p,
+    .column p,
+    .intro p,
+    main p,
+    main ul,
+    main li {
+      font-size: 1.15rem;
+      line-height: 1.7;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="images/book.png" alt="Logo joc" />
+    <nav>
+      <ul>
+        <li><a href="index.html">Acasă</a></li>
+        <li><a href="despre.html" class="active">Despre joc</a></li>
+        <li><a href="povestea.html">Povestea</a></li>
+        <li><a href="nivele.html">Nivele</a></li>
+        <li><a href="descarca.html">Descarcă</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <h1>Despre joc</h1>
+    <div class="two-column">
+      <div class="column">
+        <p><strong>Un joc care educă fără să pară o lecție.</strong></p>
+        <p>Creat special pentru copiii între 10–16 ani, dar și pentru pasionații de epoci istorice, "Aventura Piticilor Medievali" este mai mult decât o aplicație interactivă — este o nouă metodă de învățare.</p>
+        <ul>
+          <li>Stimulează curiozitatea și gândirea critică</li>
+          <li>Încurajează învățarea activă prin provocări</li>
+          <li>Oferă un echilibru între distracție și educație</li>
+          <li>Permite progresul prin merit, nu noroc</li>
+        </ul>
+      </div>
+      <div class="column">
+        <img src="images/Screenshot 2025-05-17 224236..png" alt="Screenshot joc">
+      </div>
+    </div>
+
+    <h2>Descoperă lumea noastră!</h2>
+    <div class="two-column">
+      <div class="column">
+        <p>Intră într-o lume unde istoria prinde viață! Acest joc educativ combină mister, aventură și învățare într-un mod captivant. Copiii nu doar că joacă — ei descoperă, învață, explorează și devin eroi ai cunoașterii.</p>
+      </div>
+      <div class="column">
+        <p>Aventura Piticilor Medievali este un joc fascinant, creat pentru a testa mintea și curajul. Fiecare nivel cere mai mult: atenție, strategie, implicare. Recompensa? Cunoaștere solidă și satisfacție autentică.</p>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Aventura Piticilor Medievali. Toate drepturile rezervate.</p>
+  </footer>
+</body>
+</html>

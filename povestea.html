@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8" />
+  <title>Povestea | Aventura Piticilor Medievali</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="icon" href="images/logo.svg">
+  <style>
+    @font-face {
+      font-family: 'MedievalSharp';
+      src: url('fonts/MedievalSharp-Book.ttf') format('truetype');
+    }
+
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'MedievalSharp', cursive;
+      background-color: #fffbea;
+      color: #3b2f2f;
+    }
+
+    header {
+      background-color: #3b2f2f;
+      color: white;
+      padding: 20px 10px;
+      text-align: center;
+    }
+
+    header img {
+      max-width: 160px;
+      margin-bottom: 10px;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 10px 0 0 0;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 20px;
+    }
+
+    nav a {
+      color: #ffe600;
+      text-decoration: none;
+      font-size: 18px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      padding: 40px 20px;
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    h1 {
+      text-align: center;
+      font-size: 2.5rem;
+    }
+
+    .intro p {
+      text-align: center;
+      font-size: 1.2rem;
+    }
+
+    .columns {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-top: 50px;
+      justify-content: space-between;
+    }
+
+    .column {
+      flex: 1;
+      min-width: 250px;
+      max-width: 32%;
+      text-align: center;
+    }
+
+    .column img {
+      width: 100%;
+      max-width: 250px;
+      border: none;
+      border-radius: 10px;
+      margin-top: 20px;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 10px;
+      background: #3b2f2f;
+      color: #ffe600;
+      font-size: 1.1rem;
+      letter-spacing: 0.5px;
+      border-top: 2px solid #ffe600;
+      margin-top: 40px;
+      border-radius: 18px 18px 0 0;
+      box-shadow: 0 -2px 12px 0 rgba(200,180,100,0.07);
+    }
+
+    /* Mărește textele mici din secțiuni, explicații, recenzii */
+    .faq-item p,
+    .highlight p,
+    .why-section p,
+    .column p,
+    .intro p,
+    main p,
+    main ul,
+    main li {
+      font-size: 1.15rem;
+      line-height: 1.7;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="images/book.png" alt="Logo joc" />
+    <nav>
+      <ul>
+        <li><a href="index.html">Acasă</a></li>
+        <li><a href="despre.html">Despre joc</a></li>
+        <li><a href="povestea.html" class="active">Povestea</a></li>
+        <li><a href="nivele.html">Nivele</a></li>
+        <li><a href="descarca.html">Descarcă</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <div class="intro">
+      <h1><strong>Povestea</strong></h1>
+      <p>A... fost odată...?</p>
+      <p>
+        Într-o lume cândva plină de lumină, cunoașterea a fost risipită în șase cărți magice.<br>
+        Aceste relicve vechi conțin adevăruri despre regate căzute, legende pierdute și eroi uitați.<br>
+        Dar umbrele se apropie. Forțele întunecate vor să corupă istoria și să rescrie adevărul în favoarea lor.
+      </p>
+    </div>
+
+    <div class="columns">
+      <div class="column">
+        <p>
+          Tu ești alesul. Un pitic înțelept, curajos și cu o sete uriașă de cunoaștere.<br>
+          Misiunea ta?
+        </p>
+        <img src="images/key.png" alt="Cheie magică">
+      </div>
+
+      <div class="column">
+        <img src="images/candle.png" alt="Lumină speranței">
+        <p>
+          Fiecare alegere are consecințe.<br>
+          Fiecare carte îți dă putere.<br>
+          Fiecare nivel te apropie de lumină… sau te afundă în întuneric.
+        </p>
+      </div>
+
+      <div class="column">
+        <p>
+          Să străbați tărâmurile, să recuperezi cărțile,<br>
+          să răspunzi la provocări și să reconstruiești adevărul.
+        </p>
+        <img src="images/lock.png" alt="Lacăt misterios">
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Aventura Piticilor Medievali. Toate drepturile rezervate.</p>
+  </footer>
+</body>
+</html>

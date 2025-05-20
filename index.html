@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Aventura Piticilor Medievali: cartile pierdute</title>
+  <link rel="icon" href="images/book.png" type="image/svg+xml">
+  <link rel="stylesheet" href="style.css">
+  <style>
+    @font-face {
+      font-family: 'MedievalSharp';
+      src: url('fonts/MedievalSharp-Book.ttf') format('truetype');
+    }
+
+    body {
+      margin: 0;
+      font-family: 'MedievalSharp', cursive;
+      background-color: #fffbea;
+      color: #3b2f2f;
+    }
+
+    header {
+      background-color: #3b2f2f;
+      color: white;
+      text-align: center;
+      padding: 20px;
+    }
+
+    header img {
+      width: 160px;
+      display: block;
+      margin: 0 auto 10px;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      flex-wrap: wrap;
+    }
+
+    nav a {
+      text-decoration: none;
+      color: #ffe600;
+      font-size: 18px;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    main {
+      max-width: 1200px;
+      margin: auto;
+      padding: 40px 20px;
+    }
+
+    .centered-image {
+      display: block;
+      max-width: 80%;
+      height: auto;
+      margin: 0 auto 40px;
+    }
+
+    .features {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 30px;
+      margin-top: 40px;
+      align-items: flex-start;
+    }
+
+    .feature {
+      flex: 1;
+      min-width: 250px;
+    }
+
+    .feature img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    .highlight {
+      background-color: #fef6d3;
+      padding: 20px;
+      border-radius: 12px;
+      margin-top: 40px;
+    }
+
+    .highlight h2 {
+      margin-top: 0;
+      font-size: 1.8rem;
+    }
+
+    .faq-item {
+      margin-top: 20px;
+      transition: all 0.3s ease;
+    }
+
+    .faq-item h3 {
+      margin-bottom: 10px;
+      font-size: 1.3rem;
+      cursor: pointer;
+      background-color: #3b2f2f;
+      color: white;
+      padding: 10px;
+      border-radius: 8px;
+    }
+
+    .faq-item p {
+      display: none;
+      margin: 10px 0 0 0;
+      padding: 0 10px;
+    }
+
+    .faq-item.open p {
+      display: block;
+    }
+
+    .highlight a,
+    .feature a {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 20px;
+      background-color: #3b2f2f;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    .highlight a:hover,
+    .feature a:hover {
+      background-color: #5b4444;
+    }
+
+    footer {
+      text-align: center;
+      padding: 30px 10px;
+      background: #3b2f2f;
+      color: #ffe600;
+      font-size: 1.1rem;
+      letter-spacing: 0.5px;
+      border-top: 2px solid #ffe600;
+      margin-top: 40px;
+      border-radius: 18px 18px 0 0;
+      box-shadow: 0 -2px 12px 0 rgba(200,180,100,0.07);
+    }
+
+    .why-section {
+      margin-top: 40px;
+      padding: 20px;
+      background-color: #fef6d3;
+      border-radius: 12px;
+    }
+
+    .why-title {
+      font-size: 1.8rem;
+      margin-bottom: 20px;
+    }
+
+    .why-reasons {
+      display: flex;
+      flex-direction: column;
+      gap: 15px;
+    }
+
+    .why-link {
+      display: inline-block;
+      margin-top: 15px;
+      padding: 10px 20px;
+      background-color: #3b2f2f;
+      color: white;
+      text-decoration: none;
+      border-radius: 8px;
+      font-size: 1rem;
+    }
+
+    .why-link:hover {
+      background-color: #5b4444;
+    }
+
+    /* Additional styles for improved readability */
+    .faq-item p,
+    .highlight p,
+    .why-section p,
+    .column p,
+    .intro p,
+    main p,
+    main ul,
+    main li {
+      font-size: 1.15rem;
+      line-height: 1.7;
+    }
+  </style>
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      document.querySelectorAll('.faq-item h3').forEach(item => {
+        item.addEventListener('click', () => {
+          item.parentElement.classList.toggle('open');
+        });
+      });
+    });
+  </script>
+</head>
+<body>
+  <header>
+    <img src="images/book.png" alt="Logo joc">
+    <nav>
+      <ul>
+        <li><a href="index.html">Pagina de start</a></li>
+        <li><a href="despre.html">Despre joc</a></li>
+        <li><a href="povestea.html">Povestea</a></li>
+        <li><a href="nivele.html">Nivele</a></li>
+        <li><a href="descarca.html">Descarca jocul</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <img src="images/Screenshot 2025-05-17 222705.png" class="centered-image" alt="Screenshot joc">
+
+    <div class="features">
+      <div class="feature">
+        <img src="images/dwarf_stamp.png" alt="stamp">
+      </div>
+      <div class="feature">
+        <img src="images/book_collectable.png" alt="book">
+      </div>
+      <div class="feature">
+        <div class="highlight">
+          <h2>Pornește într-o călătorie magică prin epoca medievală!</h2>
+          <p>Taramul piticilor este in pericol! Salveaza-l prin recuperarea cartilor pierdute. Nu mai pierde timpul, au nevoie de tine!</p>
+          <a href="despre.html">Despre joc</a>
+        </div>
+      </div>
+    </div>
+
+    <div class="why-section">
+      <h2 class="why-title">De ce să alegi "Aventura Piticilor Medievali"?</h2>
+      <div class="why-reasons">
+        <div class="faq-item">
+          <h3>1. <strong>Învățare care chiar funcționează</strong></h3>
+          <p>Nu citești lecții, le trăiești. Fiecare provocare e o lecție de istorie mascată într-o aventură captivantă. Îți testezi gândirea, logica și memoria fără să simți că "înveți".</p>
+        </div>
+        <div class="faq-item">
+          <h3>2. Atmosferă și personaje memorabile</h3>
+          <p>Piticii, goblinii și Sandogand nu sunt doar figuri — sunt parte dintr-o lume vie, animată și imersivă. Design-ul, muzica și povestea te scot complet din realitate și te aruncă într-un tărâm medieval fantastic.</p>
+        </div>
+        <div class="faq-item">
+          <h3>3. Competitiv, dar echitabil</h3>
+          <p>Nivelele devin tot mai grele, dar nu imposibile. Nu există noroc — doar inteligență și perseverență. Cu cât treci mai multe, cu atât înveți mai mult. Și primești recompense pe măsură.</p>
+        </div>
+      </div>
+      <a href="povestea.html" class="why-link">Povestea</a>
+    </div>
+
+    <div class="features">
+      <div class="feature">
+        <img src="images/cover_lvl1.png" alt="nivel1">
+      </div>
+      <div class="feature">
+        <div class="highlight">
+          <h2>Recenziile jucatorilor</h2>
+          <p>"Aventura Piticilor Medievali este un joc captivant care m-a ținut lipită de ecran ore întregi! Personajele amuzante și grafica de înaltă calitate m-au făcut să mă simt ca și cum aș fi într-o lume magică. Recomand cu drag acest joc tuturor pasionaților de jocuri video!" - Maria</p>
+        </div>
+      </div>
+    </div>
+  </main>
+
+  <footer>
+    <p>&copy; 2025 Joc Medieval cu Pitici. Toate drepturile rezervate.</p>
+  </footer>
+</body>
+</html>
