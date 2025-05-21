@@ -194,6 +194,9 @@
     const messagesRef = ref(db, 'messages');
 
     const messagesDiv = document.getElementById('messages');
+    const form = document.getElementById('new-message');
+    const input = document.getElementById('message-input');
+
     onChildAdded(messagesRef, (data) => {
       const entry = data.val();
       const time = new Date(entry.timestamp).toLocaleString('ro-RO', {
@@ -207,25 +210,30 @@
     });
 
     onAuthStateChanged(auth, user => {
-      const form = document.getElementById('new-message');
-      form.style.display = user ? 'flex' : 'none';
       if (user) {
         const info = document.createElement('p');
         info.innerHTML = `Conectat ca: <strong>${user.displayName || user.email}</strong>`;
         document.querySelector(".chat-box").prepend(info);
+        form.dataset.user = user.displayName || user.email;
+        input.disabled = false;
+      } else {
+        input.disabled = true;
+        input.placeholder = "Trebuie să fii conectat pentru a trimite mesaje.";
       }
-      form.addEventListener('submit', (e) => {
-        e.preventDefault();
-        const text = document.getElementById('message-input').value;
-        if (text.trim() !== '') {
-          push(messagesRef, {
-            user: user.displayName || user.email,
-            text,
-            timestamp: Date.now()
-          });
-          document.getElementById('message-input').value = '';
-        }
-      });
+    });
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      const user = form.dataset.user;
+      const text = input.value.trim();
+      if (text && user) {
+        push(messagesRef, {
+          user,
+          text,
+          timestamp: Date.now()
+        });
+        input.value = '';
+      }
     });
   </script>
 </head>
@@ -260,7 +268,7 @@
     <div class="chat-box">
       <h2>Feedback Live</h2>
       <div id="messages"></div>
-      <form id="new-message" style="display:none">
+      <form id="new-message">
         <textarea id="message-input" placeholder="Scrie un mesaj..."></textarea>
         <button type="submit">Trimite</button>
       </form>
