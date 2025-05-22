@@ -19,7 +19,7 @@
   <link rel="apple-touch-icon" href="images/favicon.ico">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/style.css">
   <title>Descarcă Jocul - Aventura Piticilor Medievali</title>
   <style>
     @font-face {
@@ -185,15 +185,15 @@
     } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
     import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 
-    // ✅ Firebase config
     const firebaseConfig = {
       apiKey: "AIzaSyADT_zCEls_mMMEgvY44bWI3zzrvWdxIxY",
       authDomain: "chat-feedback-20336.firebaseapp.com",
+      databaseURL: "https://chat-feedback-20336-default-rtdb.europe-west1.firebasedatabase.app",
       projectId: "chat-feedback-20336",
-      storageBucket: "chat-feedback-20336.appspot.com",
+      storageBucket: "chat-feedback-20336.firebasestorage.app",
       messagingSenderId: "920648385861",
       appId: "1:920648385861:web:c297bd0df63b93b6b66a2c",
-      databaseURL: "https://chat-feedback-20336-default-rtdb.firebaseio.com"
+      measurementId: "G-GN9DRMND12"
     };
 
     // ✅ Init Firebase
@@ -257,7 +257,6 @@
         input.value = '';
       }
     });
-
   </script>
 </head>
 <body>
