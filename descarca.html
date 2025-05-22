@@ -228,9 +228,10 @@
                 dateStyle: 'medium',
                 timeStyle: 'short'
               });
-              const p = document.createElement('p');
-              p.innerHTML = `<div class="message"><strong>${entry.user}</strong> <em>(${time})</em><br>${entry.text}</div>`;
-              messagesDiv.appendChild(p);
+              const message = document.createElement('div');
+              message.className = "message";
+              message.innerHTML = `<strong>${entry.user}</strong> <em>(${time})</em><br>${entry.text}`;
+              messagesDiv.appendChild(message);
             });
           });
           messagesDiv.scrollTop = messagesDiv.scrollHeight;
