@@ -129,7 +129,7 @@
     }
 
     .message {
-      background: url('images/paper1.png') repeat-y center;
+      background: url('images/book_tray.png') repeat-y center;
       background-size: 100% auto;
       padding: 15px;
       margin-bottom: 12px;
@@ -206,6 +206,8 @@
     const input = document.getElementById('message-input');
 
     // ✅ Listen to auth
+    const allMessagesRef = ref(db, 'messages');
+
     onAuthStateChanged(auth, user => {
       if (user) {
         const info = document.createElement('p');
@@ -216,7 +218,7 @@
         input.disabled = false;
 
         // ✅ Load all messages from all users
-        const allMessagesRef = ref(db, 'messages');
+      
         onValue(allMessagesRef, snapshot => {
           messagesDiv.innerHTML = ''; // Clear on refresh
           snapshot.forEach(userSnap => {
