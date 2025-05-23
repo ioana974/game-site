@@ -207,18 +207,7 @@
     // ✅ Listen to auth
     const allMessagesRef = ref(db, 'messages');
 
-    onAuthStateChanged(auth, user => {
-      if (user) {
-        const info = document.createElement('p');
-        info.innerHTML = `Conectat ca: <strong>${user.displayName || user.email}</strong>`;
-        document.querySelector(".chat-box").prepend(info);
-        form.dataset.uid = user.uid;
-        form.dataset.user = user.displayName || user.email;
-        input.disabled = false;
-
-        // ✅ Load all messages from all users
-      
-        onValue(allMessagesRef, snapshot => {
+    onValue(allMessagesRef, snapshot => {
           messagesDiv.innerHTML = ''; // Clear on refresh
           snapshot.forEach(userSnap => {
             userSnap.forEach(msgSnap => {
@@ -235,6 +224,15 @@
           });
           messagesDiv.scrollTop = messagesDiv.scrollHeight;
         });
+
+    onAuthStateChanged(auth, user => {
+      if (user) {
+        const info = document.createElement('p');
+        info.innerHTML = `Conectat ca: <strong>${user.displayName || user.email}</strong>`;
+        document.querySelector(".chat-box").prepend(info);
+        form.dataset.uid = user.uid;
+        form.dataset.user = user.displayName || user.email;
+        input.disabled = false;
 
       } else {
         input.disabled = true;
