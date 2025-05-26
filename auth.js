@@ -3,14 +3,15 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/fireba
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 
 const firebaseConfig = {
-  apiKey: "AIzaSyADT_zCEls_mMMEgvY44bWI3zzrvWdxIxY",
-  authDomain: "chat-feedback-20336.firebaseapp.com",
-  projectId: "chat-feedback-20336",
-  storageBucket: "chat-feedback-20336.appspot.com",
-  messagingSenderId: "920648385861",
-  appId: "1:920648385861:web:c297bd0df63b93b6b66a2c",
-  measurementId: "G-GN9DRMND12"
-};
+    apiKey: "AIzaSyADT_zCEls_mMMEgvY44bWI3zzrvWdxIxY",
+    authDomain: "chat-feedback-20336.firebaseapp.com",
+    databaseURL: "https://chat-feedback-20336-default-rtdb.europe-west1.firebasedatabase.app",
+    projectId: "chat-feedback-20336",
+    storageBucket: "chat-feedback-20336.firebasestorage.app",
+    messagingSenderId: "920648385861",
+    appId: "1:920648385861:web:c297bd0df63b93b6b66a2c",
+    measurementId: "G-GN9DRMND12"
+  };
 
 const app = initializeApp(firebaseConfig);
 const auth = getAuth(app);

@@ -19,7 +19,7 @@
   <link rel="apple-touch-icon" href="images/favicon.ico">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="css/style.css">
   <title>Descarcă Jocul - Aventura Piticilor Medievali</title>
   <style>
     @font-face {
@@ -129,7 +129,6 @@
     }
 
     .message {
-      background: url('images/paper1.png') repeat-y center;
       background-size: 100% auto;
       padding: 15px;
       margin-bottom: 12px;
@@ -174,60 +173,83 @@
   </style>
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
-    import { getDatabase, ref, onChildAdded, push } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
+    import {
+      getDatabase,
+      ref,
+      push,
+      onChildAdded,
+      onValue,
+      get,
+      child
+    } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-database.js";
     import { getAuth, onAuthStateChanged } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-auth.js";
 
     const firebaseConfig = {
       apiKey: "AIzaSyADT_zCEls_mMMEgvY44bWI3zzrvWdxIxY",
       authDomain: "chat-feedback-20336.firebaseapp.com",
+      databaseURL: "https://chat-feedback-20336-default-rtdb.europe-west1.firebasedatabase.app",
       projectId: "chat-feedback-20336",
-      storageBucket: "chat-feedback-20336.appspot.com",
+      storageBucket: "chat-feedback-20336.firebasestorage.app",
       messagingSenderId: "920648385861",
       appId: "1:920648385861:web:c297bd0df63b93b6b66a2c",
-      measurementId: "G-GN9DRMND12",
-      databaseURL: "https://chat-feedback-20336-default-rtdb.firebaseio.com"
+      measurementId: "G-GN9DRMND12"
     };
 
+    // ✅ Init Firebase
     const app = initializeApp(firebaseConfig);
     const db = getDatabase(app);
     const auth = getAuth();
-    const messagesRef = ref(db, 'messages');
 
     const messagesDiv = document.getElementById('messages');
     const form = document.getElementById('new-message');
     const input = document.getElementById('message-input');
 
-    onChildAdded(messagesRef, (data) => {
-      const entry = data.val();
-      const time = new Date(entry.timestamp).toLocaleString('ro-RO', {
-        dateStyle: 'medium',
-        timeStyle: 'short'
-      });
-      const p = document.createElement('p');
-      p.innerHTML = `<div class="message"><strong>${entry.user}</strong> <em>(${time})</em><br>${entry.text}</div>`;
-      messagesDiv.appendChild(p);
-      messagesDiv.scrollTop = messagesDiv.scrollHeight;
-    });
+    // ✅ Listen to auth
+    const allMessagesRef = ref(db, 'messages');
+
+    onValue(allMessagesRef, snapshot => {
+          messagesDiv.innerHTML = ''; // Clear on refresh
+          snapshot.forEach(userSnap => {
+            userSnap.forEach(msgSnap => {
+              const entry = msgSnap.val();
+              const time = new Date(entry.timestamp).toLocaleString('ro-RO', {
+                dateStyle: 'medium',
+                timeStyle: 'short'
+              });
+              const message = document.createElement('div');
+              message.className = "message";
+              message.innerHTML = `<strong>${entry.user}</strong> <em>(${time})</em><br>${entry.text}`;
+              messagesDiv.appendChild(message);
+            });
+          });
+          messagesDiv.scrollTop = messagesDiv.scrollHeight;
+        });
 
     onAuthStateChanged(auth, user => {
       if (user) {
         const info = document.createElement('p');
         info.innerHTML = `Conectat ca: <strong>${user.displayName || user.email}</strong>`;
         document.querySelector(".chat-box").prepend(info);
+        form.dataset.uid = user.uid;
         form.dataset.user = user.displayName || user.email;
         input.disabled = false;
+
       } else {
         input.disabled = true;
         input.placeholder = "Trebuie să fii conectat pentru a trimite mesaje.";
       }
     });
 
+    // ✅ Handle message send
     form.addEventListener('submit', (e) => {
       e.preventDefault();
+      const uid = form.dataset.uid;
       const user = form.dataset.user;
       const text = input.value.trim();
-      if (text && user) {
-        push(messagesRef, {
+
+      if (text && uid && user) {
+        const userRef = ref(db, `messages/${uid}`);
+        push(userRef, {
           user,
           text,
           timestamp: Date.now()
