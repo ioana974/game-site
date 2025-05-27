@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ro">
+<head>
+  <meta charset="UTF-8">
+  <title>Alege varianta de descărcare</title>
+  <link rel="stylesheet" href="css/style.css">
+  <style>
+    body {
+      background: #fffbea;
+      font-family: 'MedievalSharp', cursive;
+      color: #3b2f2f;
+      margin: 0;
+    }
+    .download-select-box {
+      max-width: 400px;
+      margin: 60px auto 0 auto;
+      background: #fef6d3;
+      border-radius: 12px;
+      box-shadow: 0 2px 16px 0 rgba(200,180,100,0.10);
+      padding: 36px 28px 32px 28px;
+      text-align: center;
+    }
+    .download-select-box h2 {
+      margin-top: 0;
+      margin-bottom: 24px;
+      font-size: 1.4rem;
+    }
+    .download-variant-btn {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 12px;
+      width: 100%;
+      margin: 16px 0;
+      padding: 14px 0;
+      background: #ffe600;
+      color: #3b2f2f;
+      border: none;
+      border-radius: 8px;
+      font-size: 1.1rem;
+      font-weight: bold;
+      cursor: pointer;
+      text-decoration: none;
+      transition: background 0.2s, color 0.2s;
+      box-shadow: 0 2px 8px 0 rgba(200,180,100,0.10);
+    }
+    .download-variant-btn:hover {
+      background: #3b2f2f;
+      color: #ffe600;
+    }
+    .download-variant-btn img {
+      width: 28px;
+      height: 28px;
+    }
+  </style>
+</head>
+<body>
+  <div class="download-select-box">
+    <h2>Alege varianta de descărcare</h2>
+    <a href="the-forgotten-books-windows.zip" class="download-variant-btn" download>
+      Varianta Windows (.zip)
+    </a>
+    <a href="the-forgotten-books-linux-macos.zip" class="download-variant-btn" download>
+      Varianta Linux (.zip)
+    </a>
+    <div style="margin-top:24px;">
+      <a href="descarca.html" style="color:#3b2f2f;text-decoration:underline;font-size:0.95rem;">Înapoi</a>
+    </div>
+  </div>
+</body>
+</html>

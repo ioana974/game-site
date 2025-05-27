@@ -170,6 +170,109 @@
       border-radius: 18px 18px 0 0;
       box-shadow: 0 -2px 12px 0 rgba(200,180,100,0.07);
     }
+
+    .main-btn {
+      display: flex;
+      align-items: center;    /* centrează vertical */
+      justify-content: center;/* centrează orizontal */
+      height: 60px;           /* setează o înălțime fixă pentru ambele butoane */
+      padding: 4px 28px;        /* padding doar pe lateral */
+      background-color: #3b2f2f;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: bold;
+      margin-top: 18px;
+      box-shadow: 0 2px 8px 0 rgba(200,180,100,0.10);
+      transition: background 0.2s, color 0.2s;
+      border: none;
+      min-width: 180px;
+      gap: 10px;
+    }
+
+    .main-btn:hover {
+      background-color: #5b4444;
+      color: #ffe600;
+    }
+
+    .download-zip-btn {
+      background-color: #ffe600;
+      color: #3b2f2f;
+      margin-left: 10px;
+    }
+
+    .download-zip-btn:hover {
+      background-color: #3b2f2f;
+      color: #ffe600;
+    }
+
+    .btn-group {
+      display: flex;
+      gap: 18px;
+      margin-top: 18px;
+      flex-wrap: wrap;
+    }
+
+    .btn-group .main-btn {
+      flex: 1 1 220px;
+      text-align: center;
+      min-width: 180px;
+      justify-content: center;
+    }
+
+    @media (max-width: 600px) {
+      .btn-group {
+        flex-direction: column;
+        gap: 12px;
+      }
+    }
+
+    .btn-align {
+      display: flex;
+      align-items: flex-start;    /* aliniere sus */
+      justify-content: center;    /* centrat orizontal */
+      height: 44px;
+      padding: 0 28px;
+      gap: 10px;
+      background-color: #3b2f2f;
+      color: white;
+      border-radius: 8px;
+      text-decoration: none;
+      font-size: 1.1rem;
+      font-weight: bold;
+      margin-top: 18px;
+      box-shadow: 0 2px 8px 0 rgba(200,180,100,0.10);
+      transition: background 0.2s, color 0.2s;
+      border: none;
+      min-width: 180px;
+    }
+
+    .btn-align:hover {
+      background-color: #5b4444;
+      color: #ffe600;
+    }
+
+    .btn-align .btn-icon {
+      width: 28px;
+      height: 28px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin-right: 0;
+    }
+
+    .btn-align .btn-text {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      height: 28px;
+      line-height: 28px;
+    }
+
+    .btn-align:first-child .btn-icon {
+      visibility: hidden;
+    }
   </style>
   <script type="module">
     import { initializeApp } from "https://www.gstatic.com/firebasejs/10.12.0/firebase-app.js";
@@ -283,7 +386,18 @@
         <p>Intră în tărâmul cunoașterii și salvează lumea medievală! Pentru a descărca jocul complet și a-ți salva progresul, ai nevoie de un cont.</p>
         <p>Alătură-te comunității noastre, urcă în clasament și acceptă provocări speciale. Fiecare erou contează!</p>
         <p><strong>Nu e doar un joc. E o călătorie magică și o comunitate a celor care iubesc aventura și învățarea.</strong></p>
-        <a href="login.html">Creează un cont</a>
+        <div class="btn-group">
+          <a href="login.html" class="main-btn btn-align">
+            <span class="btn-icon" aria-hidden="true"></span>
+            <span class="btn-text">Creează un cont</span>
+          </a>
+          <a href="descarca-alege.html" class="main-btn download-zip-btn btn-align">
+            <span class="btn-icon">
+              <img src="images/down....png" alt="" style="width:36px; height:36px;">
+            </span>
+            <span class="btn-text">Descarcă jocul (.zip)</span>
+          </a>
+        </div>
       </div>
     </div>
 
